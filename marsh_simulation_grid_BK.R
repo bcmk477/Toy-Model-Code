@@ -66,7 +66,7 @@ image(x, col = mycolors(2))
 for (i in 1:100){
   ad <- ifelse(x >= patch & x < border, x, 0)
   nb <- neighbours(ad, wdist = wdist)
-  genprob <- nb * runif(nb) * ci
+  genprob <- nb * runif(nb) * patch_cover
   xgen  <- ifelse(x == 0 & genprob >= 1, 1, 0)
   ## rule 2: growth if neighboring cells are bare
   #xbare <- ifelse(x >= 1 & x < patch & runif(x) <= prob_bord, x+1, 0)
