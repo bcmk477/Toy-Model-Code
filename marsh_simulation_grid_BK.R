@@ -58,10 +58,6 @@ x[38:42, 38:42] <- 2
 image(x, col = mycolors(2))
 
 
-#red = senescence
-#orange = adults
-#yellow = juveniles
-#green = T0
 
 for (i in 1:100){
   ad <- ifelse(x >= patch & x < border, x, 0)
