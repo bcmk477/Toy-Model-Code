@@ -68,11 +68,11 @@ for (i in 1:100){
   nb <- neighbours(ad, wdist = wdist)
   genprob <- nb * runif(nb) * patch_cover
   xgen  <- ifelse(x == 0 & genprob >= 1, 1, 0)
-  ## rule 2: growth if neighboring cells are bare
+  ## growth if neighboring cells are bare
   #xbare <- ifelse(x >= 1 & x < patch & runif(x) <= prob_bord, x+1, 0)
-  ## rule 2: growth if neighboring cells are patches
+  ## growth if neighboring cells are patches
   xpatch <- ifelse(x >= patch & x < border & runif(x) <= prob_patch, x+1, 0)
-  ## rule 2: growth if neighboring cells are borders
+  ## growth if neighboring cells are borders
   xbord <- ifelse(x >= border & runif(x) <= prob_bord, x+2, 0)
   ## make resulting grid of salt marsh
   x     <- xgen + xpatch + xbord
